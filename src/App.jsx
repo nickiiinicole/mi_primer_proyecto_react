@@ -1,15 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import { useState } from 'react';
 
 function App() {
+  const [nombre, setNombre] = useState('');
+  const manejarCambio = (event) => (setNombre(event.target.value)); 
   return (
-    <div>
-      <h1>¡Hola React! 🎉</h1>
-      <p>Mi primera app hecha con Vite y React.</p>
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h1>¡HOLA CON REACT!</h1>
+      <input type="text" placeholder='Escribe tu nombre' value={nombre} onChange={manejarCambio}/>
+      <h2>{nombre ? `Hola, ${nombre} !` : 'Escribí tu nombre arriba'}</h2>
     </div>
   );
 }
-
-export default App
+export default App;
